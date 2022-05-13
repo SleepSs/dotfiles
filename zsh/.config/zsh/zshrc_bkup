@@ -1,6 +1,6 @@
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
+# HISTFILE=~/.zsh_history
 setopt appendhistory
 
 # some useful options (man zshoptions)
@@ -37,6 +37,7 @@ zsh_add_file "zsh-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
+
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
@@ -84,8 +85,8 @@ xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-# export TERMINAL="alacritty"
-# export BROWSER="brave"
+export TERMINAL="alacritty"
+export BROWSER="brave"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -94,3 +95,4 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+
