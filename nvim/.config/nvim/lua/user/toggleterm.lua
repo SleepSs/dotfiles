@@ -25,7 +25,8 @@ toggleterm.setup({
 		},
 	},
 })
-
+-- command to open term :Toggleterm direction = [float,horizontal] size = 10
+-- This function is set in case you want to move from terminal to nvim
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
@@ -63,7 +64,7 @@ function _HTOP_TOGGLE()
 	htop:toggle()
 end
 
-local python = Terminal:new({ cmd = "python", hidden = true })
+local python = Terminal:new({ cmd = "python3", hidden = true })
 
 function _PYTHON_TOGGLE()
 	python:toggle()

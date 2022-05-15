@@ -32,12 +32,22 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<A-l>", ":bnext<CR>", opts)
+keymap("n", "<A-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+
+-- Replace ^ and $ with H and L
+keymap("n", "H", "^", opts)
+keymap("n", "L", "$", opts)
+keymap("v", "H", "^", opts)
+keymap("v", "L", "$", opts)
+
+-- Replace macro-recording q with Q
+keymap("n", "Q", "q", opts)
+keymap("n", "q", "<Nop>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -69,3 +79,29 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>fc", ":NvimTreeFindFile<cr>", opts)
+
+-- Bufferline
+keymap("n", "<C-q>", ":Bdelete!<cr>", opts)
+
+-- Switch words
+keymap("n", "gs", ":Switch<cr>", opts)
+
+-- ToggleTerm
+-- 退出终端插入模式
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+-- 打开普通终端
+-- keymap("n", "<leader>tt", "<cmd>exe v:count.'ToggleTerm'<CR>", opts)
+-- 打开浮动终端
+-- keymap("n", "<leader>tf", "<cmd>lua require('toggleterm').float_toggle()<CR>", opts)
+-- 打开lazy git 终端
+keymap("n", "<leader>tg", ":ToggleTerm _LAZYGIT_TOGGLE<CR>", opts)
+-- python
+keymap("n", "<leader>tp", ":ToggleTerm _PYTHON_TOGGLE<CR>", opts)
+-- TODO 创建键位使得自动运行程序
+-- 打开或关闭所有终端
+keymap("n", "<leader>ta", ":ToggleTermToggleAll<CR>", opts)
+
+-- Telescope
+keymap('n', '<leader>ff', ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
+keymap('n', '<leader>fg', ":lua require'telescope.builtin'.live_grep({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)

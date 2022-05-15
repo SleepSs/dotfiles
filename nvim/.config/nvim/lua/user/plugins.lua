@@ -53,10 +53,22 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-
+  use "lukas-reineke/indent-blankline.nvim" -- show indention line
+  use "AndrewRadev/switch.vim"
+  use "ethanholz/nvim-lastplace"
+  use "rmagatti/auto-session"
+  use "folke/which-key.nvim"
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use {
+      "catppuccin/nvim",
+      -- setting alias 
+      as = "catppuccin",
+      config = function()
+          require("user.catppuccin")
+      end
+  }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -95,3 +107,9 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
+
+-- args list
+-- requires ** dependency for a plugin
+-- config = function() require(...) end  ** autoload config
+-- cmd = {"", "", "", ""}  ** run after command
+-- keys = {'', '', ''} ** run after pressing keys
