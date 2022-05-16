@@ -99,9 +99,11 @@ keymap("n", "<leader>tg", ":ToggleTerm _LAZYGIT_TOGGLE<CR>", opts)
 -- python
 keymap("n", "<leader>tp", ":ToggleTerm _PYTHON_TOGGLE<CR>", opts)
 -- TODO 创建键位使得自动运行程序
+keymap("n", "<leader>tc", ":TermExec cmd='g++ -std=c++17 % -o build'<CR>", opts)
 -- 打开或关闭所有终端
 keymap("n", "<leader>ta", ":ToggleTermToggleAll<CR>", opts)
 
 -- Telescope
 keymap('n', '<leader>ff', ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
 keymap('n', '<leader>fg', ":lua require'telescope.builtin'.live_grep({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
+keymap('n', '<leader>fo', ":lua require'telescope.builtin'.oldfiles()<cr>", opts)

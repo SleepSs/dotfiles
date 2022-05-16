@@ -40,3 +40,7 @@ function mcd() {
     mkdir -p "$1"
     cd "$1"
 }
+
+function gco() {
+    g++ -std=c++17 -Wall -O0 "$1" -o "$(echo $1 | sed -E 's/(.+)\.cpp$/\1/')" 
+}

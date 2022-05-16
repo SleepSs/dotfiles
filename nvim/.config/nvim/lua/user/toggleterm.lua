@@ -69,3 +69,9 @@ local python = Terminal:new({ cmd = "python3", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
+
+local cppcompiler = Terminal:new({ cmd = "g++ -std=c++17 -Wall -O0 % -o buildc", hidden = true })
+
+function _gpp17_TOGGLE()
+	cppcompiler:toggle()
+end
