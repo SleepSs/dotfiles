@@ -1,5 +1,5 @@
 #!/bin/sh
-export ZDOTDIR=$HOME/.config/zsh
+export ZDOTDIR=$HOME/.zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
 
@@ -76,14 +76,14 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
+# setxkbmap -option caps:escape
+# xset r rate 210 40
 
 # Speedy keys
-xset r rate 210 40
+# xset r rate 210 40
 
 # Environment variables set everywhere
-export EDITOR="nvim"
+export EDITOR="vim"
 # export TERMINAL="alacritty"
 # export BROWSER="brave"
 
@@ -91,7 +91,18 @@ export EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # remap caps to escape
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
-# test to see
+
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Cursor bloack
+_fix_cursor() {
+  # echo -ne '\e[1 q'
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
