@@ -9,7 +9,8 @@
     ~/.config/tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.zsh:
-    ~/.zshrc:
+    ~/.zshrc: zshrc
+    ~/.vimrc: vimrc
 
 
 - shell:
