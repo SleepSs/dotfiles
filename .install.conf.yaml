@@ -11,6 +11,7 @@
     ~/.zsh:
     ~/.zshrc: zshrc
     ~/.vimrc: vimrc
+    ~/.user_scripts: scripts
 
 
 - shell:

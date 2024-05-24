@@ -3,8 +3,12 @@ alias j='z'
 alias f='zi'
 alias l='ls -lah'
 alias g='lazygit'
+alias tmux='tmux -2'
+alias tat='tmux -2 attach -t'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
+alias px='proxychains4'
+alias ac='python3 ~/.local/bin/ac.py'
 # alias qt="~/Qt/Tools/QtCreator/bin/qtcreator"
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 

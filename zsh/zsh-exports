@@ -3,6 +3,8 @@
 HISTSIZE=1000000
 SAVEHIST=1000000
 export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+
 #export MANPAGER='pager'
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export MANWIDTH=999 export PATH=$HOME/.cargo/bin:$PATH export PATH=$HOME/.local/share/go/bin:$PATH
@@ -45,3 +47,18 @@ else
    export CUDA_HOME=/usr/local/cuda
 fi
 
+
+[ -f ~/.secrets ] && source ~/.secrets
+
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
