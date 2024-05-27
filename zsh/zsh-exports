@@ -9,11 +9,24 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH="/usr/local/nvim-linux64/bin":$PATH
+export PATH="/usr/lib/llvm-11/bin":$PATH
 # export PATH=$HOME/.fnm:$PATH
 export PATH="$PATH:./node_modules/.bin"
+export NEMU_HOME=/home/shives/courses/why-ICS/ics2023/nemu
+export AM_HOME=/home/shives/courses/why-ICS/ics2023/abstract-machine
+
 # eval "$(fnm env)"
 eval "$(zoxide init zsh)"
 # eval "`pip completion --zsh`"
+
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
