@@ -152,7 +152,8 @@ function! Osc52Yank()
     let buffer='\e]52;c;'.buffer.'\x07'
     silent exe "!echo -ne ".shellescape(buffer)." > ".shellescape("/dev/pts/0")
 endfunction
-""command! Osc52CopyYank call Osc52Yank()
+=======
+" command! Osc52CopyYank call Osc52Yank()
 ""augroup Example
 ""    autocmd!
 ""    autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
@@ -897,6 +898,7 @@ inoremap <silent><c-s> <c-o>:call <sid>EasyMotion()<cr>
 " }}}
 
 " tokyonight color inside,donnot change it {{{
+set term=xterm-256color
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
